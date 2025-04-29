@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/css/bootstrap.css" />
+    <link rel="stylesheet" href="/assets/css/custom.css" />
+    <link rel="stylesheet" href="/assets/css/chatbox.css" />
+    <title>JSP Ajax 실시간 회원제 채팅 서비스</title>
+    <script src="/assets/js/jquery-3.7.1.js"></script>
+    <script src="/assets/js/bootstrap.js"></script>
+    <script type="text/javascript">
+      /*function getUnread() {
+        $.ajax({
+          type: "post",
+          url: "./chatUnread",
+          data: {
+            userId: encodeURIComponent("<%= userId %>"),
+          },
+          success: function (result) {
+            if (result > 0) {
+              showUnread(result);
+            } else {
+              showUnread("");
+            }
+          },
+        });
+      }
+
+      function getInfiniteUnread() {
+        setInterval(function () {
+          getUnread();
+        }, 3000);
+      }
+
+      function showUnread(result) {
+        $("#unread").html(result);
+      }
+        */
+    </script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-default">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="index.html" class="navbar-brand">실시간 회원제 채팅 서비스</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="index.html">메인</a></li>
+            <li><a href="find.html">친구찾기</a></li>
+            <li>
+              <a href="box.html">메시지함<span id="unread" class="label label-info"></span></a>
+            </li>
+            <li><a href="boardList.html">자유게시판</a></li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">접속하기 <span class="caret"></span> </a>
+              <ul class="dropdown-menu">
+                <li><a href="login.html">로그인</a></li>
+                <li><a href="join.html">회원가입</a></li>
+              </ul>
+            </li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">회원관리 <span class="caret"></span> </a>
+              <ul class="dropdown-menu">
+                <li><a href="updateInfo.html">회원정보수정</a></li>
+                <li><a href="updatePassword.html">비밀번호 변경</a></li>
+                <li><a href="updateProfile.html">프로필 수정</a></li>
+                <li><a href="logoutAction.html">로그아웃</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container">
+      <table class="table table-bordered table-hover" style="text-align: center; border: 1px solid #ddd">
+        <thead>
+          <tr>
+            <th colspan="5"><h4>자유 게시판</h4></th>
+          </tr>
+          <tr>
+            <th style="background-color: #fafafa; color: #000; width: 70px"><h5>번호</h5></th>
+            <th style="background-color: #fafafa; color: #000"><h5>제목</h5></th>
+            <th style="background-color: #fafafa; color: #000; width: 100px"><h5>작성자</h5></th>
+            <th style="background-color: #fafafa; color: #000; width: 100px"><h5>작성일자</h5></th>
+            <th style="background-color: #fafafa; color: #000; width: 70px"><h5>조회수</h5></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>3</td>
+            <td style="text-align: left">
+              <a href="#"> 글 제목33 </a>
+            </td>
+            <td>작성자3</td>
+            <td>2025-04-24</td>
+            <td>5</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td style="text-align: left">
+              <a href="#"> 글 제목22 </a>
+            </td>
+            <td>작성자2</td>
+            <td>2025-04-24</td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td style="text-align: left">
+              <a href="#"> 글 제목11 </a>
+            </td>
+            <td>작성자1</td>
+            <td>2025-04-24</td>
+            <td>20</td>
+          </tr>
+          <tr>
+            <td colspan="5">
+              <a href="boardArticleWrite.jsp" class="btn btn-primary pull-right" type="submit">글쓰기</a>
+              <ul class="pagination" style="margin: 0 auto">
+                <li>
+                  <a href="#"><span class="glyphicon glyphicon-backward"></span></a>
+                </li>
+                <li>
+                  <a href="#"><span class="glyphicon glyphicon-chevron-left" style="color: gray"></span></a>
+                </li>
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li>
+                  <a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                </li>
+                <li>
+                  <a href="#"><span class="glyphicon glyphicon-forward" style="color: gray"></span></a>
+                </li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="vertical-alignment-helper">
+        <div class="modal-dialog vertical-align-center">
+          <div class="modal-content panel-success">
+            <div class="modal-header panel-heading">
+              <button type="button" class="close" data-dismiss="modal">
+                <span aria-hidden="true">&times</span>
+                <span class="sr-only">Close</span>
+              </button>
+              <h4 class="modal-title">모달 타이틀</h4>
+            </div>
+            <div class="modal-body">모달 내용</div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      //$("#messageModal").modal("show");
+    </script>
+
+    <script type="text/javascript">
+      $(function () {
+        //getUnread();
+        //getInfiniteUnread();
+      });
+    </script>
+  </body>
+</html>
