@@ -48,24 +48,24 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a href="./index.html" class="navbar-brand">실시간 회원제 채팅 서비스</a>
+          <a href="../index.html" class="navbar-brand">실시간 회원제 채팅 서비스</a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="./index.html">메인</a></li>
-            <li><a href="./user/find.html">친구찾기</a></li>
+            <li class="active"><a href="../index.html">메인</a></li>
+            <li><a href="../user/find.html">친구찾기</a></li>
             <li>
-              <a href="./chat/box.html">메시지함<span id="unread" class="label label-info"></span></a>
+              <a href="../chat/box.html">메시지함<span id="unread" class="label label-info"></span></a>
             </li>
-            <li><a href="./board/list.html">자유게시판</a></li>
+            <li><a href="../board/list.html">자유게시판</a></li>
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">접속하기 <span class="caret"></span> </a>
               <ul class="dropdown-menu">
-                <li><a href="./user/login.html">로그인</a></li>
-                <li><a href="./user/join.html">회원가입</a></li>
+                <li><a href="../user/login.html">로그인</a></li>
+                <li><a href="../user/join.html">회원가입</a></li>
               </ul>
             </li>
           </ul>
@@ -74,16 +74,73 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">회원관리 <span class="caret"></span> </a>
               <ul class="dropdown-menu">
-                <li><a href="./user/updateInfo.html">회원정보수정</a></li>
-                <li><a href="./user/updatePassword.html">비밀번호 변경</a></li>
-                <li><a href="./user/updateProfile.html">프로필 수정</a></li>
-                <li><a href="./user/logoutAction.html">로그아웃</a></li>
+                <li><a href="../user/updateInfo.html">회원정보수정</a></li>
+                <li><a href="../user/updatePassword.html">비밀번호 변경</a></li>
+                <li><a href="../user/updateProfile.html">프로필 수정</a></li>
+                <li><a href="../user/logoutAction.html">로그아웃</a></li>
               </ul>
             </li>
           </ul>
         </div>
       </nav>
     </header>
+    <div class="container bootstrap snippet">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="portlet portlet-default">
+            <div class="portlet-heading">
+              <div class="portlet-title">
+                <h4><i class="fa fa-circle text-green"></i>실시간 채팅방</h4>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+            <div id="chat" class="panel-collapse collapse in">
+              <div id="chatList" class="portlet-body chat-widget" style="overflow-y: auto; width: auto; height: 600px">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="media">
+                      <a class="pull-left" href="#">
+                        <img class="media-object img-circle" style="width: 30px; height: 30px" src="/assets/images/icon.png" alf="" />
+                      </a>
+                      <div class="media-body">
+                        <h4 class="media-heading">라이언 <span class="small pull-right">2025-04-30 20:35</span></h4>
+                        <p>안녕!</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr />
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="media">
+                      <a class="pull-left" href="#">
+                        <img class="media-object img-circle" style="width: 30px; height: 30px" src="/assets/images/icon.png" alf="" />
+                      </a>
+                      <div class="media-body">
+                        <h4 class="media-heading">죠르디 <span class="small pull-right">2025-0430 20:36</span></h4>
+                        <p>반가워</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr />
+              </div>
+              <div class="portlet-footer">
+                <div class="row" style="height: 90px">
+                  <div class="form-group col-xs-10">
+                    <textarea style="height: 80px" id="chatContent" class="form-control" placeholder="메시지를 입력하세요" maxlength="100"></textarea>
+                  </div>
+                  <div class="form-group col-xs-2">
+                    <button type="button" class="btn btn-default pull-right" onclick="submitFunction();">전송</button>
+                    <div class="clearfix"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="vertical-alignment-helper">

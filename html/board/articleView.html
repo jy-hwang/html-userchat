@@ -48,24 +48,24 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a href="./index.html" class="navbar-brand">실시간 회원제 채팅 서비스</a>
+          <a href="../index.html" class="navbar-brand">실시간 회원제 채팅 서비스</a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="./index.html">메인</a></li>
-            <li><a href="./user/find.html">친구찾기</a></li>
+            <li class="active"><a href="../index.html">메인</a></li>
+            <li><a href="../user/find.html">친구찾기</a></li>
             <li>
-              <a href="./chat/box.html">메시지함<span id="unread" class="label label-info"></span></a>
+              <a href="../chat/box.html">메시지함<span id="unread" class="label label-info"></span></a>
             </li>
-            <li><a href="./board/list.html">자유게시판</a></li>
+            <li><a href="../board/list.html">자유게시판</a></li>
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">접속하기 <span class="caret"></span> </a>
               <ul class="dropdown-menu">
-                <li><a href="./user/login.html">로그인</a></li>
-                <li><a href="./user/join.html">회원가입</a></li>
+                <li><a href="../user/login.html">로그인</a></li>
+                <li><a href="../user/join.html">회원가입</a></li>
               </ul>
             </li>
           </ul>
@@ -74,16 +74,66 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">회원관리 <span class="caret"></span> </a>
               <ul class="dropdown-menu">
-                <li><a href="./user/updateInfo.html">회원정보수정</a></li>
-                <li><a href="./user/updatePassword.html">비밀번호 변경</a></li>
-                <li><a href="./user/updateProfile.html">프로필 수정</a></li>
-                <li><a href="./user/logoutAction.html">로그아웃</a></li>
+                <li><a href="../user/updateInfo.html">회원정보수정</a></li>
+                <li><a href="../user/updatePassword.html">비밀번호 변경</a></li>
+                <li><a href="../user/updateProfile.html">프로필 수정</a></li>
+                <li><a href="../user/logoutAction.html">로그아웃</a></li>
               </ul>
             </li>
           </ul>
         </div>
       </nav>
     </header>
+
+    <div class="container">
+      <table class="table table-bordered table-hover" style="text-align: center; border: 1px solid #ddd">
+        <thead>
+          <tr>
+            <th colspan="4"><h4>게시물 보기</h4></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="background-color: #fafafa; color: #000; width: 80px"><h5>제목</h5></td>
+            <td colspan="3"><h5>What is Lorem Ipsum?</h5></td>
+          </tr>
+          <tr>
+            <td style="background-color: #fafafa; color: #000; width: 80px"><h5>작성자</h5></td>
+            <td colspan="3"><h5>작성자3</h5></td>
+          </tr>
+          <tr>
+            <td style="background-color: #fafafa; color: #000; width: 80px"><h5>작성날짜</h5></td>
+            <td><h5>2025-04-24</h5></td>
+            <td style="background-color: #fafafa; color: #000; width: 80px"><h5>조회수</h5></td>
+            <td><h5>6</h5></td>
+          </tr>
+          <tr>
+            <td style="background-color: #fafafa; color: #000; width: 80px"><h5>내용</h5></td>
+            <td colspan="3" style="text-align: left">
+              <h5>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+                a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+                Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+              </h5>
+            </td>
+          </tr>
+          <tr>
+            <td style="vertical-align: middle; min-height: 150px; background-color: #fafafa; color: #000; width: 80px"><h5>첨부파일</h5></td>
+            <td colspan="3">
+              <h5><a href="#">abc.txt</a></h5>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="5" style="text-align: center">
+              <a href="list.html" class="btn btn-secondary">목록</a>
+              <a href="replyWrite.html" class="btn btn-danger">답변</a>
+              <a href="articleUpdate.html" class="btn btn-primary">수정</a>
+              <a href="#" class="btn btn-warning" onclick="return confirm('정말로 삭제하시겠습니까?')">삭제</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
     <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="vertical-alignment-helper">

@@ -48,24 +48,24 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a href="index.html" class="navbar-brand">실시간 회원제 채팅 서비스</a>
+          <a href="../index.html" class="navbar-brand">실시간 회원제 채팅 서비스</a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="index.html">메인</a></li>
-            <li><a href="find.html">친구찾기</a></li>
+            <li class="active"><a href="../index.html">메인</a></li>
+            <li><a href="../user/find.html">친구찾기</a></li>
             <li>
-              <a href="box.html">메시지함<span id="unread" class="label label-info"></span></a>
+              <a href="../chat/box.html">메시지함<span id="unread" class="label label-info"></span></a>
             </li>
-            <li><a href="boardList.html">자유게시판</a></li>
+            <li><a href="../board/list.html">자유게시판</a></li>
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">접속하기 <span class="caret"></span> </a>
               <ul class="dropdown-menu">
-                <li><a href="login.html">로그인</a></li>
-                <li><a href="join.html">회원가입</a></li>
+                <li><a href="../user/login.html">로그인</a></li>
+                <li><a href="../user/join.html">회원가입</a></li>
               </ul>
             </li>
           </ul>
@@ -74,10 +74,10 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">회원관리 <span class="caret"></span> </a>
               <ul class="dropdown-menu">
-                <li><a href="updateInfo.html">회원정보수정</a></li>
-                <li><a href="updatePassword.html">비밀번호 변경</a></li>
-                <li><a href="updateProfile.html">프로필 수정</a></li>
-                <li><a href="logoutAction.html">로그아웃</a></li>
+                <li><a href="../user/updateInfo.html">회원정보수정</a></li>
+                <li><a href="../user/updatePassword.html">비밀번호 변경</a></li>
+                <li><a href="../user/updateProfile.html">프로필 수정</a></li>
+                <li><a href="../user/logoutAction.html">로그아웃</a></li>
               </ul>
             </li>
           </ul>
@@ -86,73 +86,55 @@
     </header>
 
     <div class="container">
-      <table class="table table-bordered table-hover" style="text-align: center; border: 1px solid #ddd">
-        <thead>
+      <form method="post" action="./userUpdateInfo">
+        <table class="table table-borderd table-hover" style="text-align: center; border: 1px solid #ddd">
+          <thead>
           <tr>
-            <th colspan="5"><h4>자유 게시판</h4></th>
+            <th colspan ="2" ><h4>회원 정보 수정 양식</h4></th>
           </tr>
-          <tr>
-            <th style="background-color: #fafafa; color: #000; width: 70px"><h5>번호</h5></th>
-            <th style="background-color: #fafafa; color: #000"><h5>제목</h5></th>
-            <th style="background-color: #fafafa; color: #000; width: 100px"><h5>작성자</h5></th>
-            <th style="background-color: #fafafa; color: #000; width: 100px"><h5>작성일자</h5></th>
-            <th style="background-color: #fafafa; color: #000; width: 70px"><h5>조회수</h5></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>3</td>
-            <td style="text-align: left">
-              <a href="#"> 글 제목33 </a>
-            </td>
-            <td>작성자3</td>
-            <td>2025-04-24</td>
-            <td>5</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td style="text-align: left">
-              <a href="#"> 글 제목22 </a>
-            </td>
-            <td>작성자2</td>
-            <td>2025-04-24</td>
-            <td>10</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td style="text-align: left">
-              <a href="#"> 글 제목11 </a>
-            </td>
-            <td>작성자1</td>
-            <td>2025-04-24</td>
-            <td>20</td>
-          </tr>
-          <tr>
-            <td colspan="5">
-              <a href="boardArticleWrite.jsp" class="btn btn-primary pull-right" type="submit">글쓰기</a>
-              <ul class="pagination" style="margin: 0 auto">
-                <li>
-                  <a href="#"><span class="glyphicon glyphicon-backward"></span></a>
-                </li>
-                <li>
-                  <a href="#"><span class="glyphicon glyphicon-chevron-left" style="color: gray"></span></a>
-                </li>
-                <li class="active"><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li>
-                  <a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a>
-                </li>
-                <li>
-                  <a href="#"><span class="glyphicon glyphicon-forward" style="color: gray"></span></a>
-                </li>
-              </ul>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="width: 110px;"><h5>아이디</h5></td>
+              <td><h5><%= user.getUserId() %></h5>
+              <input type="hidden" name="userId" value="<%= user.getUserId() %>"/></td>
+            </tr>
+            <tr>
+              <td style="width: 110px;"><h5>이름</h5></td>
+              <td colspan="2"><input class="form-control" type="text" id="userName" name="userName" maxlength="20" placeholder="이름을 입력하세요" value= "<%= user.getUserName() %>"/></td>
+            </tr>
+            <tr>
+              <td style="width: 110px;"><h5>나이</h5></td>
+              <td colspan="2"><input class="form-control" type="number" id="userAge" name="userAge" maxlength="20" placeholder="나이를 입력하세요"  value= "<%= user.getUserAge() %>"/></td>
+            </tr>
+            <tr>
+              <td style="width: 110px;"><h5>성별</h5></td>
+              <td colspan="2">
+                <div class="form-group" style="text-align:center; margin: 0 auto;">
+                  <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-primary <% if(user.getUserGender().equals("M")) out.print("active"); %>">
+                      <input type="radio" name="userGender" autocomplete="off" value="M" <% if(user.getUserGender().equals("M")) out.print("checked"); %>>남자
+                    </label>
+                    <label class="btn btn-primary <% if(user.getUserGender().equals("F")) out.print("active"); %>">
+                      <input type="radio" name="userGender" autocomplete="off" value="F" <% if(user.getUserGender().equals("F")) out.print("checked"); %>>여자
+                    </label>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td style="width: 110px;"><h5>이메일</h5></td>
+              <td colspan="2"><input class="form-control" type="email" id="userEmail" name="userEmail" maxlength="20" placeholder="이메일을 입력하세요"  value= "<%= user.getUserEmail() %>"/></td>
+            </tr>
+             <tr>
+              <td style="text-align:left;" colspan="3"><h5 style="color:red;"></h5>
+              <input class="btn btn-primary pull-right" type="submit" value="수정"/>
+              </td>
+            </tr>
+          </tbody>
+        
+        </table>
+      </form>
     </div>
 
     <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-hidden="true">
